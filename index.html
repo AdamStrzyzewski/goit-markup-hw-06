@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .modal {
+        top: 50%;
+        left: 50%;
+        width: 400px;
+        height: 300px;
+        background-color: teal;
+        position: fixed;
+        z-index: 1;
+        transition-property: visibility, opacity, transform;
+        transition-duration: 2s;
+        transform: translateX(-50%) translateY(-50%) scale(1) rotate(720deg)
+          skew(0deg, 0deg);
+        opacity: 1;
+        visibility: visible;
+        display: block;
+      }
+
+      .is-hidden {
+        pointer-events: none;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateX(-50%) translateY(-50%) scale(0) rotate(0deg)
+          skew(40deg, 40deg);
+      }
+    </style>
+  </head>
+  <body>
+    <button data-modal-open>OPEN</button>
+
+    <div class="modal is-hidden" data-modal>
+      <button data-modal-close>X</button>
+    </div>
+
+    <script src="./js/modal.js"></script>
+  </body>
+</html>
